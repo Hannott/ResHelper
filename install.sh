@@ -220,7 +220,7 @@ else
     echo -e "\nDone: Numpy Installed!\n"
     echo -e "\nNOTE: If you encouter Numpy issues, make sure that you are running a Klipper Python 3.x version"
     echo -e "If the issue is still not resolved, you can also try installing the following modules:"
-    echo -e '"sudo apt install python3-numpy python3-matplotlib libatlas-base-dev libopenblas-dev"\n'
+    echo -e '"sudo apt install python3-numpy python3-matplotlib libopenblas-dev"\n'
 fi
 
 ## Check Matplotlib
@@ -235,20 +235,12 @@ else
     echo -e "\nDone: Matplotlib Installed!\n"
     echo -e "\nNOTE: If you encouter Matplotlib issues, make sure that you are running a Klipper Python 3.x version"
     echo -e "If the issue is still not resolved, you can also try installing the following modules:"
-    echo -e '"sudo apt install python3-numpy python3-matplotlib libatlas-base-dev libopenblas-dev"\n'
+    echo -e '"sudo apt install python3-numpy python3-matplotlib libopenblas-dev"\n'
 fi
 
 
-## Check Libatlas
-echo -e "\nChecking libatlas modules..."
-
-if dpkg-query -W -f='${Status}' libatlas-base-dev 2>/dev/null | grep -q "ok installed"; then
-    echo "Libatlas-base-dev is installed!"
-else
-    echo "Libatlas-base-dev is not installed."
-	sudo apt-get -y install libatlas-base-dev
-	echo -e "\nDone: Libatlas-base-dev Installed!\n"
-fi
+## Check Libopenblas
+echo -e "\nChecking Libopenblas module..."
 
 if dpkg-query -W -f='${Status}' libopenblas-dev 2>/dev/null | grep -q "ok installed"; then
     echo "Libopenblas-dev is installed!"
